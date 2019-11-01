@@ -1,13 +1,14 @@
 import React from "react";
 import "../App.css";
 import PlayerCard from "./PlayerCard";
+import useDarkMode from "./hooks/useDarkMode"
 
 const Display = props => {
-  const [darkMode,setDarkMod] = userDarkMode();
+  const [darkMode,setDarkMode] = useDarkMode();
 
   const toggleDarkMode = event => {
     event.preventDefault();
-    setDarkMode(darkMode);
+    setDarkMode(!darkMode);
   };
 
   return(
@@ -15,7 +16,7 @@ const Display = props => {
       <span title="darkModeBtn">
         <button onClick={toggleDarkMode}> Dark mode</button>
       </span>
-      {props.PlayerData.map((player) => {
+      {props.playerData.map((player) => {
         return <PlayerCard
         key={player.name}
         name={player.name}
@@ -26,4 +27,4 @@ const Display = props => {
     </div>
   )
 }
-export default Display
+export default Display;

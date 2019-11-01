@@ -3,6 +3,7 @@ import axios from "axios";
 
 import './App.css';
 import PlayerCard from './components/PlayerCard';
+import Display from "./components/Display"
 
 class App extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class App extends React.Component {
     return(
       <div className="App">
         <h1>Women's World Cup players</h1>
-        <PlayerCard/>
+        <Display playerData={this.state.users}/>
       </div>
     )
   }
